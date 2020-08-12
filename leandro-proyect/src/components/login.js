@@ -1,22 +1,14 @@
 import React from "react";
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import '../styles/login.css'
 
 
 const Login = () => {
   return (
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          >
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            Photos
+      <AppBar position="static" color="secondary">
+        <Toolbar variant="regular" className="items-position">
+          <Typography variant="h6" color="inherit" align="center">
+            Mateify
           </Typography>
         </Toolbar>
       </AppBar>

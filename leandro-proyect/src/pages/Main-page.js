@@ -1,9 +1,14 @@
 import React from "react";
-import Login from "../components/login"
+import Login from "../components/login";
+import Content from "../components/content"
+
 
 const MainPage = () => {
-    return(
-        <Login />
+    return (
+        <div>
+            <Login />
+            <Content />
+        </div>
     )
 }
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import '../styles/header.css'
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import './styles.css'
 
 const Head = () => {
   return (
-    <div>
+    <Box>
       <AppBar position="static" color="secondary">
         <Toolbar variant="regular" className="items-position">
           <Typography variant="h6" color="inherit" align="center">
@@ -12,7 +12,7 @@ const Head = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-    </div>
+    </Box>
   );
 };
 

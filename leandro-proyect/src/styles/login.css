@@ -1,3 +1,16 @@
-.items-position {
-    justify-content: center;
+.content {
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.content-paper {
+    padding: 40px 0px;
+}
+
+.content-form {
+    width: 70%;
+}
+
+.btn-register {
+    width: 60%;
 }

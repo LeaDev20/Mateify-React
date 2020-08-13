@@ -1,13 +1,15 @@
 import React from "react";
 import Login from "../components/login";
-import Content from "../components/content"
+import Head from "../components/header"
+import Error from "../components/errorMessage"
 
 
 const MainPage = () => {
     return (
         <div>
+            <Head />
             <Login />
-            <Content />
+            <Error />
         </div>
     )
 }

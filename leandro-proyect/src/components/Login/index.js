@@ -25,6 +25,7 @@ const Login = (props) => {
               variant="outlined"
               margin="normal"
               value={props.mailValue}
+              onChange={props.mailChange}
               fullWidth
             />
             <TextField
@@ -33,6 +34,7 @@ const Login = (props) => {
               variant="outlined"
               margin="normal"
               value={props.passValue}
+              onChange={props.passChange}
               fullWidth
             />
             <Button variant="contained" color="secondary" size="large">

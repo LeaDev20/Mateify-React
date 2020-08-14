@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { Container, Paper, Typography, Grid, Box } from "@material-ui/core";
+import { Paper, Typography, Grid, Box } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 const Error = () => {

@@ -1,6 +1,14 @@
 import React from "react";
 import "./styles.css";
-import { Paper, Typography, FormControl, TextField, Button, Box, Divider } from "@material-ui/core";
+import {
+  Paper,
+  Typography,
+  FormControl,
+  TextField,
+  Button,
+  Box,
+  Divider,
+} from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 const Login = (props) => {
@@ -20,7 +28,7 @@ const Login = (props) => {
           </Typography>
           <FormControl className="content-form">
             <TextField
-              id="outlined-basic"
+              id="correo"
               label="Correo electrónico"
               variant="outlined"
               margin="normal"
@@ -29,7 +37,7 @@ const Login = (props) => {
               fullWidth
             />
             <TextField
-              id="outlined-basic"
+              id="contraseña"
               label="Contraseña"
               variant="outlined"
               margin="normal"
@@ -37,7 +45,12 @@ const Login = (props) => {
               onChange={props.passChange}
               fullWidth
             />
-            <Button variant="contained" color="secondary" size="large">
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              onClick={props.click}
+            >
               COMENZAR A CREAR PLAYLIST
             </Button>
             <Box>
@@ -53,12 +66,12 @@ const Login = (props) => {
             </Box>
             <Box>
               <Button
-                  className="btn-register"
-                  variant="outlined"
-                  color="secondary"
-                  size="large"
-                >
-                  REGISTRATE
+                className="btn-register"
+                variant="outlined"
+                color="secondary"
+                size="large"
+              >
+                REGISTRATE
               </Button>
             </Box>
           </FormControl>

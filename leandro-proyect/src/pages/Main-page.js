@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Login from "../components/Login";
 import Head from "../components/Header";
 import Error from "../components/ErrorMessage";
-import Table from "../components/Table";
+import TableList from "../components/Table";
 import { Box, Container } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import userData from "../base-de-datos/userData.json";
@@ -31,8 +31,8 @@ const MainPage = () => {
       <Router>
         <Switch>
           <Route path="/play-list">
-            <Container maxWidth="md">
-              <Table />
+            <Container maxWidth="lg">
+              <TableList />
             </Container>
           </Route>
           <Route path="/error">

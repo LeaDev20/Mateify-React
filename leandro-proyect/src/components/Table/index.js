@@ -1,7 +1,6 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Typography, Paper, InputBase, IconButton } from "@material-ui/core";
-import { borders } from '@material-ui/system';
 import "./styles.css";
 
 const TableList = () => {

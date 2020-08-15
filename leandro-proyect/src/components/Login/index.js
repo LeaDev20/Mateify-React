@@ -49,6 +49,7 @@ const Login = (props) => {
               variant="contained"
               color="secondary"
               size="large"
+              href={props.refValue}
               onClick={props.click}
             >
               COMENZAR A CREAR PLAYLIST

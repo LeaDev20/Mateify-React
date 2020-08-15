@@ -11,6 +11,7 @@ import songData from "../base-de-datos/songData.json";
 const MainPage = () => {
   const [mail, setMail] = useState();
   const [pass, setPass] = useState();
+  const [ref, setRef] = useState("play-list");
 
   const getMailValue = (e) => {
     setMail(e.target.value);
@@ -20,10 +21,11 @@ const MainPage = () => {
     setPass(e.target.value);
   };
 
-  const showMessage = () => {
-    alert("Correo: " + mail);
-    alert("Contraseña: " + pass);
-  };
+  const changeRef = () => {
+    if(mail === "hola" && pass === 1234) {
+      setRef("error")
+    }
+  }
 
   return (
     <Box>
@@ -47,7 +49,8 @@ const MainPage = () => {
                 mailChange={getMailValue}
                 passValue={pass}
                 passChange={getPassValue}
-                click={showMessage}
+                refValue={ref}
+                click={changeRef}
               />
             </Container>
           </Route>

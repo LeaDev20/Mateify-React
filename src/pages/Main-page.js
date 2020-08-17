@@ -11,7 +11,7 @@ import songData from "../base-de-datos/songData.json";
 const MainPage = () => {
   const [mail, setMail] = useState();
   const [pass, setPass] = useState();
-  const [ref, setRef] = useState("play-list");
+  const [ref, setRef] = useState("");
 
   const getMailValue = (e) => {
     setMail(e.target.value);
@@ -21,15 +21,23 @@ const MainPage = () => {
     setPass(e.target.value);
   };
 
-  const changeRef = () => {
-    if(mail === "hola" && pass === 1234) {
-      setRef("error")
+  const checkUser = (element) => {
+    if(element.email === mail && element.password === pass) {
+      return true;
     }
   }
 
+  const usuarios = userData.filter(checkUser);
+  
+  const avatarImg = usuarios.map(u => {
+    return(
+      u.profilePictureUrl
+    )
+  })
+
   return (
     <Box>
-      <Head />
+      <Head avatar={avatarImg} />
       <Router>
         <Switch>
           <Route path="/play-list">
@@ -50,7 +58,6 @@ const MainPage = () => {
                 passValue={pass}
                 passChange={getPassValue}
                 refValue={ref}
-                click={changeRef}
               />
             </Container>
           </Route>

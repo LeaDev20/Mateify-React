@@ -1,5 +1,5 @@
 {
-  "home": "http://Leandro-matea.github.io/Mateify-Reactx",
+  "homepage": "http://Leandro-matea.github.io/Mateify-React",
   "name": "leandro-proyect",
   "version": "0.1.0",
   "private": true,
@@ -14,13 +14,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.2"
   },
-  "scripts": { 
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build" , 
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

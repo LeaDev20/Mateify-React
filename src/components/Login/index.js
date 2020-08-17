@@ -22,7 +22,9 @@ const Login = (props) => {
           alignItems="center"
           py="30px"
         >
-          <LockOutlinedIcon color="secondary" fontSize="large" />
+          <Box my="10px">
+            <LockOutlinedIcon color="secondary" fontSize="large" />
+          </Box>
           <Typography variant="h4" gutterBottom>
             Ingresar
           </Typography>
@@ -45,27 +47,28 @@ const Login = (props) => {
               onChange={props.passChange}
               fullWidth
             />
-            <Button
-              variant="contained"
-              color="secondary"
-              size="large"
-              href={props.refValue}
-              onClick={props.click}
-            >
-              COMENZAR A CREAR PLAYLIST
-            </Button>
-            <Box>
+            <Box my="20px">
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                href={props.refValue}
+                onClick={props.click}
+                fullWidth
+              >
+                COMENZAR A CREAR PLAYLIST
+              </Button>
+            </Box>
+            <Box mb="20px">
               <Typography variant="subtitle1" gutterBottom>
                 ¿HAS OLVIDADO LA CONTRASEÑA?
               </Typography>
             </Box>
             <Divider />
-            <Box>
-              <Typography variant="subtitle1" gutterBottom>
-                ¿NO TIENES CUENTA?
-              </Typography>
+            <Box mt="30px">
+              <Typography variant="subtitle1">¿NO TIENES CUENTA?</Typography>
             </Box>
-            <Box>
+            <Box my="10px">
               <Button
                 className="btn-register"
                 variant="outlined"

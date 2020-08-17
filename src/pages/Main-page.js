@@ -11,7 +11,7 @@ import songData from "../base-de-datos/songData.json";
 const MainPage = () => {
   const [mail, setMail] = useState();
   const [pass, setPass] = useState();
-  const [ref, setRef] = useState("");
+  const [ref, setRef] = useState("error");
 
   const getMailValue = (e) => {
     setMail(e.target.value);
@@ -27,9 +27,15 @@ const MainPage = () => {
     }
   }
 
-  const usuarios = userData.filter(checkUser);
+  const usuario = userData.filter(checkUser);
+
+  const navPage = () => {
+    if(usuario === true){
+      return setRef("play-list")
+    }
+  }
   
-  const avatarImg = usuarios.map(u => {
+  const avatarImg = usuario.map(u => {
     return(
       u.profilePictureUrl
     )
@@ -58,6 +64,7 @@ const MainPage = () => {
                 passValue={pass}
                 passChange={getPassValue}
                 refValue={ref}
+                click={navPage}
               />
             </Container>
           </Route>

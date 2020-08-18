@@ -1,18 +1,18 @@
 import React from "react";
 import logo from "../../images/Logo.png";
 import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from "@material-ui/core/Avatar";
 import "./styles.css";
 
 const Head = (props) => {
   return (
     <Box>
       <AppBar position="static" color="secondary">
-        <Toolbar variant="regular" className="items-position" >
-          <Box mx="50px" my="10px">
+        <Toolbar variant="regular" className={props.class}>
+          <Box>
             <img src={logo} alt="logo" className="img-logo" />
           </Box>
-          <Box mr="50px">
+          <Box>
             <Typography variant="h6" color="inherit" align="center">
               Mateify
             </Typography>

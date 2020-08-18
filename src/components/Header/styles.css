@@ -1,5 +1,9 @@
-.items-position {
+.items-space {
     justify-content: space-between;
+}
+
+.items-center {
+    justify-content: center;
 }
 
 .img-logo {

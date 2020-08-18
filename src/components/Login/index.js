@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-const Login = (props) => {
+const Form = (props) => {
   return (
     <Box my="30px">
       <Paper variant="outlined" elevation={3}>
@@ -42,6 +42,7 @@ const Login = (props) => {
               id="contraseña"
               label="Contraseña"
               variant="outlined"
+              type="password"
               margin="normal"
               value={props.passValue}
               onChange={props.passChange}
@@ -85,4 +86,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Form;

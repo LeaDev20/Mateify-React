@@ -1,19 +1,25 @@
-import React, { useState } from "react";
-import Head from "../components/Header";
+import React from "react";
 import Error from "../components/ErrorMessage"
 import TableList from "../components/Table";
 import { Box, Container } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import songData from "../base-de-datos/songData.json";
-import userData from "../base-de-datos/userData.json";
 
 const PlaylistPage = () => {
-  const [avatar, setAvatar] = useState();
   const { uuid } = useParams();
+
+  const checkSong = (song) => {
+    if (song.uuid === uuid) {
+      return true;
+    }
+    return false;
+  };
+
+  const canciones = songData.filter(checkSong);
+  console.log(canciones);
 
   return (
     <Box>
-      <Head class={"items-space"} avatar={avatar} />
       <Container maxWidth="lg">
           {uuid && <TableList />}
           {!uuid && <Error />}

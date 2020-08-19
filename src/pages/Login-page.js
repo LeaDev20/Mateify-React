@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Form from "../components/Login";
-import Head from "../components/Header";
 import { Box, Container } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import userData from "../base-de-datos/userData.json";
@@ -36,7 +35,6 @@ const LoginPage = () => {
 
   return (
     <Box>
-      <Head class={"items-center"} />
       <Container maxWidth="md">
         <Form
           mailValue={mail}

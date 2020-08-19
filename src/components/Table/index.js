@@ -1,9 +1,11 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Typography, Paper, InputBase, IconButton } from "@material-ui/core";
+import songData from '../../base-de-datos/songData.json';
 import "./styles.css";
 
 const TableList = () => {
+
   return (
     <Box>
       <Box width={600} mx="auto" my={3}>
@@ -32,13 +34,13 @@ const TableList = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                      <TableCell align="left" padding="none">Titulo</TableCell>
-                      <TableCell align="right">Hola</TableCell>
-                      <TableCell align="right">Como</TableCell>
-                      <TableCell align="right">Estas</TableCell>
-                      <TableCell align="right" padding="none">Decime</TableCell>
-                    </TableRow>
+                  <TableRow>
+                    <TableCell align="left" padding="none">Titulo</TableCell>
+                    <TableCell align="right">Hola</TableCell>
+                    <TableCell align="right">Como</TableCell>
+                    <TableCell align="right">Estas</TableCell>
+                    <TableCell align="right" padding="none">Decime</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </Box>
@@ -63,18 +65,14 @@ const TableList = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  <Box mx="auto">
-                    <Paper variant="outlined">
-                      <Box textAlign="center">
-                        <Typography variant="body1">
-                          UPS!, TU PLAYLIST AUN ESTA VACIA
-                        </Typography>
-                        <Typography variant="body1">
-                          Comienza a agregar canciones
-                        </Typography>
-                      </Box>
-                    </Paper>
-                  </Box>
+                  <Paper variant="outlined">
+                    <Typography variant="body1">
+                      UPS!, TU PLAYLIST AUN ESTA VACIA
+                    </Typography>
+                    <Typography variant="body1">
+                      Comienza a agregar canciones
+                    </Typography>
+                  </Paper>
                 </TableBody>
               </Table>
             </Box>

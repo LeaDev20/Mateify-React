@@ -6,11 +6,11 @@ import PlaylistPage from "./pages/Play-list";
 
 
 const App = () => {
-  const [className, setClassName] = useState();
+  const [classValue, setClassName] = useState("items-space");
   
   return (
     <Router>
-      <Head />
+      <Head className={classValue} />
       <Switch>
         <Route path="/playlist/:uuid">
           <PlaylistPage />

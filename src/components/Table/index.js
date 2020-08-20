@@ -4,8 +4,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, 
 import songData from '../../base-de-datos/songData.json';
 import "./styles.css";
 
-const TableList = () => {
-
+const TableList = (props) => {
   return (
     <Box>
       <Box width={600} mx="auto" my={3}>
@@ -13,7 +12,7 @@ const TableList = () => {
           <IconButton type="submit" aria-label="search">
             <SearchIcon />
           </IconButton>
-          <InputBase placeholder="Buscar" />
+          <InputBase placeholder="Buscar" value={props.value} onChange={props.onChange} onKeyPress={props.inputKeyPress} />
         </Paper>
       </Box>
       <Box mb={3}>
@@ -26,7 +25,7 @@ const TableList = () => {
               <Table aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="left" padding="none">Nombre</TableCell>
+                    <TableCell align="left" padding="none">{props.name}</TableCell>
                     <TableCell align="right">Artista</TableCell>
                     <TableCell align="right">Álbum</TableCell>
                     <TableCell align="right">Duración</TableCell>
@@ -35,11 +34,11 @@ const TableList = () => {
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell align="left" padding="none">Titulo</TableCell>
-                    <TableCell align="right">Hola</TableCell>
-                    <TableCell align="right">Como</TableCell>
-                    <TableCell align="right">Estas</TableCell>
-                    <TableCell align="right" padding="none">Decime</TableCell>
+                    <TableCell align="left" padding="none"></TableCell>
+                    <TableCell align="right"></TableCell>
+                    <TableCell align="right"></TableCell>
+                    <TableCell align="right"></TableCell>
+                    <TableCell align="right" padding="none"></TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

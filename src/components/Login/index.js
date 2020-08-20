@@ -53,7 +53,6 @@ const Form = (props) => {
                 variant="contained"
                 color="secondary"
                 size="large"
-                href={props.refValue}
                 onClick={props.click}
                 fullWidth
               >

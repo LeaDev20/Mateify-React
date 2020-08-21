@@ -8,15 +8,15 @@ import songData from "../base-de-datos/songData.json";
 const PlaylistPage = () => {
   const [inputValue, setInput] = useState();
   const [song, setSong] = useState([]);
+  const [myPlaylist, setMyPlayList] = useState([]);
   const { uuid } = useParams();
 
   const getSearchValue = (e) => {
     setInput(e.target.value);
-    console.log(inputValue);
   }
 
   const filterSong = (song) => {
-    if (song.name === inputValue) {
+    if (song.name.includes(inputValue)) {
       return true ;
     } else {
       return false;
@@ -27,14 +27,17 @@ const PlaylistPage = () => {
     if (e.key === "Enter") {
       const songs = songData.filter(filterSong);
       setSong(songs);
-      console.log(song);
     }
+  }
+
+  const addToList = () => {
+    setMyPlayList(...myPlaylist, song);
   }
 
   return (
     <Box>
       <Container maxWidth="lg">
-          {uuid && <TableList value={inputValue} onChange={getSearchValue} inputKeyPress={inputKeyPress} />}
+          {uuid && <TableList value={inputValue} onChange={getSearchValue} inputKeyPress={inputKeyPress} song={song} addToList={addToList} myPlaylist={myPlaylist} />}
           {!uuid && <Error />}
       </Container>
     </Box>

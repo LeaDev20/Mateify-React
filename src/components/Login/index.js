@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   Divider,
+  Avatar,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
@@ -23,7 +24,9 @@ const Form = (props) => {
           py="30px"
         >
           <Box my="10px">
-            <LockOutlinedIcon color="secondary" fontSize="large" />
+            <Avatar>
+              <LockOutlinedIcon color="secondary" fontSize="large" />
+            </Avatar>
           </Box>
           <Typography variant="h4" gutterBottom>
             Ingresar

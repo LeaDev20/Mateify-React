@@ -36,34 +36,27 @@ const TableList = (props) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {cancion.length === 1 && (
-                    <TableRow>
-                      <TableCell align="left" padding="none">{cancion.map(s => {
-                        return (
-                          <Box>
-                            <Avatar src={s.artist.coverUrl} />
-                            {s.name}
-                          </Box>
-                        )
-                      })}
-                      </TableCell>
-                      <TableCell align="right">{cancion.map(s => {
-                        return s.artist.name
-                      })} </TableCell>
-                      <TableCell align="right">{cancion.map(s => {
-                        return s.album
-                      })} </TableCell>
-                      <TableCell align="right">{cancion.map(s => {
-                        return s.duration
-                      })} </TableCell>
-                      <TableCell align="right" padding="none"><Button onClick={props.addToList} >Add</Button></TableCell>
-                    </TableRow>
-                  )}
                   {cancion.length === 0 && (
                     <TableRow>
-                      <Typography align="center">No hay resultados: utiliza la barra de busqueda para encontrar canciones</Typography>
+                      <Box ml="300px">
+                        <Typography align="center">No hay resultados: utiliza la barra de busqueda para encontrar canciones</Typography>
+                      </Box>
                     </TableRow>
                   )}
+                  {cancion.map(song => (
+                    <TableRow>
+                      <TableCell align="left" padding="none">
+                          <Box display="flex" flexDirection="row" justifyContent="start" alignItems="center">
+                            <Avatar src={song.artist.coverUrl} />
+                            {song.name}
+                          </Box>
+                      </TableCell>
+                      <TableCell align="right">{song.artist.name}</TableCell>
+                      <TableCell align="right">{song.album}</TableCell>
+                      <TableCell align="right">{song.duration}</TableCell>
+                      <TableCell align="right" padding="none"><Button onClick={props.addToList}>Add</Button></TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </Box>
@@ -90,43 +83,39 @@ const TableList = (props) => {
                 <TableBody>
                   {playlist.length === 0 && (
                     <TableRow>
-                      <Paper variant="outlined">
-                        <Typography variant="body1">
-                          UPS!, TU PLAYLIST AUN ESTA VACIA
-                        </Typography>
-                        <Typography variant="body1">
-                          Comienza a agregar canciones
-                        </Typography>
-                      </Paper>
-                    </TableRow>
-                  )}
-                  {playlist.length === 1 && (
-                    <TableRow>
-                      <TableCell align="left" padding="none">{playlist.map(s => {
-                        return <Avatar src={s.artist.coverUrl} />
-                      })}
-                      </TableCell>
-                      <TableCell align="right">{playlist.map(s => {
-                        return s.artist.name
-                      })} </TableCell>
-                      <TableCell align="right">{playlist.map(s => {
-                        return s.duration
-                      })} </TableCell>
-                      <TableCell align="right">{playlist.map(s => {
-                        return "votos"
-                      })} 
-                      </TableCell>
-                      <TableCell align="right">{playlist.map(s => {
-                        return (
-                          <Box>
-                            <ThumbUpAltIcon />, 
-                            <ThumbDownIcon />
+                      <Box ml={45}>
+                        <Paper variant="outlined" >
+                          <Box p={4}>
+                            <Typography variant="body1" align="center">
+                              UPS!, TU PLAYLIST AUN ESTA VACIA
+                            </Typography>
+                            <Typography variant="body1" align="center">
+                              Comienza a agregar canciones
+                            </Typography>
                           </Box>
-                        )
-                      })} 
-                      </TableCell>
+                        </Paper>
+                      </Box>
                     </TableRow>
                   )}
+                  {playlist.map(song => (
+                    <TableRow>
+                      <TableCell align="left" padding="none">
+                          <Box display="flex" flexDirection="row" justifyContent="start" alignItems="center">
+                            <Avatar src={song.artist.coverUrl} />
+                            {song.name}
+                          </Box>
+                      </TableCell>
+                      <TableCell align="right">{song.artist.name}</TableCell>
+                      <TableCell align="right">{song.duration}</TableCell>
+                      <TableCell align="right">Votos</TableCell>
+                      <TableCell align="right" padding="none">
+                        <Box>
+                          <ThumbUpAltIcon /> 
+                          <ThumbDownIcon />
+                        </Box>
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </Box>

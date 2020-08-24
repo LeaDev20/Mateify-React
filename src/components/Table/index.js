@@ -38,8 +38,8 @@ const TableList = (props) => {
                 <TableBody>
                   {cancion.length === 0 && (
                     <TableRow>
-                      <Box ml="300px">
-                        <Typography align="center">No hay resultados: utiliza la barra de busqueda para encontrar canciones</Typography>
+                      <Box py={1} textAlign="end">
+                        <Typography>No hay resultados: utiliza la barra de busqueda para encontrar canciones</Typography>
                       </Box>
                     </TableRow>
                   )}
@@ -83,7 +83,7 @@ const TableList = (props) => {
                 <TableBody>
                   {playlist.length === 0 && (
                     <TableRow>
-                      <Box ml={45}>
+                      <Box ml={43} py={10}>
                         <Paper variant="outlined" >
                           <Box p={4}>
                             <Typography variant="body1" align="center">
@@ -107,11 +107,11 @@ const TableList = (props) => {
                       </TableCell>
                       <TableCell align="right">{song.artist.name}</TableCell>
                       <TableCell align="right">{song.duration}</TableCell>
-                      <TableCell align="right">Votos</TableCell>
+                      <TableCell align="right">{song.count}</TableCell>
                       <TableCell align="right" padding="none">
                         <Box>
-                          <ThumbUpAltIcon /> 
-                          <ThumbDownIcon />
+                          <ThumbUpAltIcon onClick={props.iconSum} /> 
+                          <ThumbDownIcon onClick={props.iconRest} />
                         </Box>
                       </TableCell>
                     </TableRow>

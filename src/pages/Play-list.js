@@ -23,6 +23,7 @@ const PlaylistPage = () => {
     }
   };
 
+
   const inputKeyPress = (e) => {
     if (e.key === "Enter") {
       const songs = songData.filter(filterSong);
@@ -33,18 +34,42 @@ const PlaylistPage = () => {
   const addToList = (e, id) => {
     const listId = myPlaylist.map(tema => tema.uuid);
     if(listId.includes(id)) {
-      alert("La cancion ya existe")
+      alert("La cancion ya esta agregada")
     } else {
-      const newPlaylist = myPlaylist.concat(song);
+      const newSong = songData.filter(
+          (song) => {
+          if (song.uuid === id) {
+            return true ;
+          } else {
+            return false;
+          }
+        }
+      );
+      const songCount = newSong.map(
+        (song) => {
+          return {...song, count: 0}
+        }
+      )
+      const newPlaylist = myPlaylist.concat(songCount);
       setMyPlayList(newPlaylist);
+      console.log(newPlaylist)
     }
-    console.log(listId);
+  }
+
+  const iconSum = () => {
+    const songVote = myPlaylist.map(song => {
+      return (song.count + 1);
+    })
+  }
+
+  const iconRest = () => {
+    
   }
 
   return (
     <Box>
       <Container maxWidth="lg">
-          {uuid && <TableList value={inputValue} onChange={getSearchValue} inputKeyPress={inputKeyPress} song={song} addToList={addToList} myPlaylist={myPlaylist} />}
+          {uuid && <TableList value={inputValue} onChange={getSearchValue} inputKeyPress={inputKeyPress} song={song} addToList={addToList} myPlaylist={myPlaylist} iconSum={iconSum} iconRest={iconRest} />}
           {!uuid && <Error />}
       </Container>
     </Box>

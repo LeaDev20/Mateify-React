@@ -6,7 +6,7 @@ import PlaylistPage from "./pages/Play-list";
 
 
 const App = () => {
-  const [classValue, setClassName] = useState("items-space");
+  const [classValue, setClassName] = useState("");
   
   return (
     <Router>

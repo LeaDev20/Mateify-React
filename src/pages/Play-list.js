@@ -30,8 +30,15 @@ const PlaylistPage = () => {
     }
   }
 
-  const addToList = () => {
-    setMyPlayList(...myPlaylist, song);
+  const addToList = (e, id) => {
+    const listId = myPlaylist.map(tema => tema.uuid);
+    if(listId.includes(id)) {
+      alert("La cancion ya existe")
+    } else {
+      const newPlaylist = myPlaylist.concat(song);
+      setMyPlayList(newPlaylist);
+    }
+    console.log(listId);
   }
 
   return (

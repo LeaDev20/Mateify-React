@@ -54,7 +54,7 @@ const TableList = (props) => {
                       <TableCell align="right">{song.artist.name}</TableCell>
                       <TableCell align="right">{song.album}</TableCell>
                       <TableCell align="right">{song.duration}</TableCell>
-                      <TableCell align="right" padding="none"><Button onClick={props.addToList}>Add</Button></TableCell>
+                      <TableCell align="right" padding="none"><Button onClick={(e) => props.addToList(e, song.uuid)}>Add</Button></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

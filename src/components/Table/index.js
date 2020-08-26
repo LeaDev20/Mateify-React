@@ -110,8 +110,8 @@ const TableList = (props) => {
                       <TableCell align="right">{song.count}</TableCell>
                       <TableCell align="right" padding="none">
                         <Box>
-                          <ThumbUpAltIcon onClick={props.iconSum} /> 
-                          <ThumbDownIcon onClick={props.iconRest} />
+                          <ThumbUpAltIcon onClick={(e) => props.iconSum(e, song.uuid)} /> 
+                          <ThumbDownIcon onClick={(e) => props.iconRest(e, song.uuid)} />
                         </Box>
                       </TableCell>
                     </TableRow>

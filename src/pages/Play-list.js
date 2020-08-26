@@ -52,18 +52,36 @@ const PlaylistPage = () => {
       )
       const newPlaylist = myPlaylist.concat(songCount);
       setMyPlayList(newPlaylist);
-      console.log(newPlaylist)
+      console.log(newSong);
     }
   }
 
-  const iconSum = () => {
-    const songVote = myPlaylist.map(song => {
-      return (song.count + 1);
+  const iconSum = (e, id) => {
+    const songFilter = myPlaylist.filter((song) => {
+      if(song.uuid === id) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    const songVote = songFilter.map(song => {
+      return song.count++;
     })
+    setMyPlayList([...myPlaylist]);
   }
 
-  const iconRest = () => {
-    
+  const iconRest = (e, id) => {
+    const songFilter = myPlaylist.filter((song) => {
+      if(song.uuid === id) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    const songVote = songFilter.map(song => {
+      return song.count--;
+    })
+    setMyPlayList([...myPlaylist]);
   }
 
   return (

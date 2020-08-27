@@ -1,13 +1,24 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
+import { makeStyles } from "@material-ui/core/styles";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box, Typography, Paper, InputBase, IconButton, Button, Avatar } from "@material-ui/core";
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import AddIcon from "@material-ui/icons/Add";
+import { pink } from "@material-ui/core/colors";
 import "./styles.css";
+
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    color: theme.palette.getContrastText(pink[500]),
+    backgroundColor: pink[500]
+  }
+}))
 
 const TableList = (props) => {
   const cancion = props.song
   const playlist = props.myPlaylist;
+  const classes = useStyles();
   return (
     <Box>
       <Box width={600} mx="auto" my={3}>
@@ -45,7 +56,7 @@ const TableList = (props) => {
                   )}
                   {cancion.map(song => (
                     <TableRow>
-                      <TableCell align="left" padding="none">
+                      <TableCell align="left" padding="none" >
                           <Box display="flex" flexDirection="row" justifyContent="start" alignItems="center">
                             <Avatar src={song.artist.coverUrl} />
                             {song.name}
@@ -54,7 +65,13 @@ const TableList = (props) => {
                       <TableCell align="right">{song.artist.name}</TableCell>
                       <TableCell align="right">{song.album}</TableCell>
                       <TableCell align="right">{song.duration}</TableCell>
-                      <TableCell align="right" padding="none"><Button onClick={(e) => props.addToList(e, song.uuid)}>Add</Button></TableCell>
+                      <TableCell align="right" padding="none">
+                        <Box align="right" >
+                          <Avatar className={classes.icon}>
+                            <AddIcon onClick={(e) => props.addToList(e, song.uuid)} >Add</AddIcon>
+                          </Avatar>
+                        </Box>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

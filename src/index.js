@@ -3,9 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from "./App";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme ({
+  palette: {
+    primary: {
+      main: '#009688'
+    },
+    error: {
+      main: '#C4C4C4'
+    }
+  },
+  typography: {
+    h5: {
+      fontFamily: "Righteous"
+    }
+  }
+})
 
 ReactDOM.render(
-  <App />,
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
   document.getElementById('root')
 );
 

@@ -7,13 +7,13 @@ import "./styles.css";
 const Head = (props) => {
   return (
     <Box>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" color="primary">
         <Toolbar variant="regular" className={props.className}>
           <Box>
             <img src={logo} alt="logo" className="img-logo" />
           </Box>
           <Box>
-            <Typography variant="h6" color="inherit" align="center">
+            <Typography variant="h5" color="inherit" align="center">
               Mateify
             </Typography>
           </Box>

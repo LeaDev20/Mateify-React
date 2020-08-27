@@ -10,9 +10,23 @@ import {
   Divider,
   Avatar,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import { pink } from "@material-ui/core/colors";
+
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    color: theme.palette.getContrastText(pink[500]),
+    backgroundColor: pink[500],
+    width: "55px",
+    height: "55px",
+    top: "10px",
+    margin: "15px",
+  }
+}))
 
 const Form = (props) => {
+  const classes = useStyles();
   return (
     <Box my="30px">
       <Paper variant="outlined" elevation={3}>
@@ -24,8 +38,8 @@ const Form = (props) => {
           py="30px"
         >
           <Box my="10px">
-            <Avatar>
-              <LockOutlinedIcon color="secondary" fontSize="large" />
+            <Avatar className={classes.icon} >
+              <LockOutlinedIcon fontSize="large" />
             </Avatar>
           </Box>
           <Typography variant="h4" gutterBottom>
@@ -63,19 +77,19 @@ const Form = (props) => {
               </Button>
             </Box>
             <Box mb="20px">
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="subtitle1" color="primary" gutterBottom>
                 ¿HAS OLVIDADO LA CONTRASEÑA?
               </Typography>
             </Box>
             <Divider />
             <Box mt="30px">
-              <Typography variant="subtitle1">¿NO TIENES CUENTA?</Typography>
+              <Typography variant="subtitle1" color="error">¿NO TIENES CUENTA?</Typography>
             </Box>
             <Box my="10px">
               <Button
                 className="btn-register"
                 variant="outlined"
-                color="secondary"
+                color="primary"
                 size="large"
               >
                 REGISTRATE
